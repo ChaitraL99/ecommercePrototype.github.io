@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Simple E-commerce template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product-card.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <!-- Navigation Bar -->
+      <div class="wrapper-nav">
+        <div class="navbar">
+          <div class="con-logo">SHOPPING</div>
+          <div class="con-btns">
+            <button class="cart-btn" id="cart-btn">
+              Cart<sup id="cartNo">0</sup>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Cart popup -->
+      <div class="container" id="mycart">
+        <div class="shopping-cart">
+          <div class="shopping-cart-header">
+            <i class="fa fa-shopping-cart cart-icon"></i>
+          </div>
+          <ul class="shopping-cart-items" id="ulItems"></ul>
+        </div>
+      </div>
+      <!-- Category div  -->
+      <div class="wrapper">
+        <div id="one">
+          <ul>
+            <li class="active">
+              <a href="#" onclick="displayProd(0)">All Products</a>
+            </li>
+            <li><a href="#" onclick="displayProd(001)">Category 1</a></li>
+            <li><a href="#" onclick="displayProd(002)">Category 2</a></li>
+            <li><a href="#" onclick="displayProd(003)">Category 3</a></li>
+          </ul>
+        </div>
+        <div id="two">
+          <h2 id="categoryName">All Products</h2>
+          <ul class="cards" id="prodDisp"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="js/jsonData.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+      (function () {
+        $("#cart-btn").on("click", function () {
+          $(".shopping-cart").fadeToggle("slow");
+        });
+      })();
+    </script>
+  </body>
+</html>
